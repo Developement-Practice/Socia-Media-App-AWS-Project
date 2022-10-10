@@ -3,14 +3,27 @@ import { ThemeProvider } from "@mui/styles";
 import Head from "next/head";
 import React, { useEffect } from "react";
 // import Header from "../components/Header";
-import Amplify from "aws-amplify";
 import type { AppProps } from "next/app";
 import theme from "../theme";
 
 import awsconfig from "../aws-exports";
 import AuthContext from "../context/AuthContext";
+import { Amplify, Auth } from "aws-amplify";
 
-Amplify.configure(awsconfig);
+// Amplify.configure({
+// Auth: {
+//   mandatorySignIn: true,
+//   region: process.env.AWS_REGION,
+//   userPoolId: process.env.AWS_USER_POOL_ID,
+//   userPoolWebClientId: process.env.AWS_USER_POOL_WEB_CLIENT_ID,
+// },
+// });
+
+try {
+  Amplify.configure(awsconfig);
+} catch (e) {
+  console.log(e);
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {

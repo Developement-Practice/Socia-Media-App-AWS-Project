@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^3.5.7",
     "@emotion/cache": "^11.10.3",
     "@emotion/react": "^11.10.4",
     "@emotion/server": "^11.10.0",
@@ -20,21 +21,21 @@
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.36.1"
+    "react-hook-form": "^7.37.0"
   },
   "devDependencies": {
-    "@types/node": "18.8.2",
+    "@types/node": "18.8.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
-    "eslint": "^8.24.0",
+    "eslint": "^8.25.0",
     "eslint-config-next": "12.3.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.3.0",
     "eslint-plugin-promise": "^6.0.1",
-    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react": "^7.31.9",
     "prettier": "^2.7.1",
     "typescript": "^4.8.4"
   }
