@@ -7,27 +7,34 @@ type Post
   @model
   @auth(
     rules: [
-      { allow: owner, operations: [create, update, delete] }
+      { allow: owner, ownerField: "username" }
       { allow: public, operations: [read] }
       { allow: private, operations: [read] }
     ]
   ) {
   id: ID!
   title: String!
-  comments: [Comment] @hasMany(indexName: "byPost", fields: ["id"])
+  content: String!
+  username: String
+    @index(name: "postsByUsername", queryField: "postsByUsername")
+  coverImage: String
+  comments: [Comment] @hasMany(indexName: "byPost", fields: ["id"]) #check out: https://docs.amplify.aws/cli/graphql/data-modeling/#has-many-relationship
 }
 
+#Comment
+#queries: null - removes any authorization rules for queries, allowing anyone to query for comments
+#ownerField:createdBy - sets the createdBy field as the currently signed in user
 type Comment
   @model
   @auth(
     rules: [
-      { allow: owner, operations: [create, update, delete] }
+      { allow: owner, ownerField: "createdBy" }
       { allow: public, operations: [read] }
       { allow: private, operations: [read] }
     ]
   ) {
-  id: ID! @index(name: "byPost", sortKeyFields: ["postID"])
-  postID: ID!
+  id: ID!
+  message: String
   post: Post @belongsTo(fields: ["postID"])
-  content: String!
+  postID: ID! @index(name: "byPost")
 }

@@ -1,18 +1,18 @@
 {
   "version": 1,
   "serviceConfiguration": {
-    "apiName": "socialmediaapp",
+    "apiName": "socialmediaappaws",
     "serviceName": "AppSync",
     "defaultAuthType": {
       "mode": "API_KEY",
       "expirationTime": 365,
-      "apiKeyExpirationDate": "2023-10-09T08:08:13.495Z",
-      "keyDescription": "apikey"
+      "apiKeyExpirationDate": "2023-10-16T10:27:58.232Z",
+      "keyDescription": "kaustav aws api key"
     },
     "additionalAuthTypes": [
       {
         "mode": "AMAZON_COGNITO_USER_POOLS",
-        "cognitoUserPoolId": "authsocialmediaappd56311c6"
+        "cognitoUserPoolId": "authsocialmediaappaws7467e378"
       }
     ]
   }

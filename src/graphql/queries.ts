@@ -7,20 +7,22 @@ export const getPost = /* GraphQL */ `
     getPost(id: $id) {
       id
       title
+      content
+      username
+      coverImage
       comments {
         items {
           id
+          message
           postID
-          content
           createdAt
           updatedAt
-          owner
+          createdBy
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -34,12 +36,45 @@ export const listPosts = /* GraphQL */ `
       items {
         id
         title
+        content
+        username
+        coverImage
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const postsByUsername = /* GraphQL */ `
+  query PostsByUsername(
+    $username: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelPostFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    postsByUsername(
+      username: $username
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        title
+        content
+        username
+        coverImage
+        comments {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -49,21 +84,23 @@ export const getComment = /* GraphQL */ `
   query GetComment($id: ID!) {
     getComment(id: $id) {
       id
-      postID
+      message
       post {
         id
         title
+        content
+        username
+        coverImage
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        owner
       }
-      content
+      postID
       createdAt
       updatedAt
-      owner
+      createdBy
     }
   }
 `;
@@ -76,18 +113,20 @@ export const listComments = /* GraphQL */ `
     listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        postID
+        message
         post {
           id
           title
+          content
+          username
+          coverImage
           createdAt
           updatedAt
-          owner
         }
-        content
+        postID
         createdAt
         updatedAt
-        owner
+        createdBy
       }
       nextToken
     }

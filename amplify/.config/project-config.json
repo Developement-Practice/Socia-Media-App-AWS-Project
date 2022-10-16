@@ -1,8 +1,5 @@
 {
-  "providers": [
-    "awscloudformation"
-  ],
-  "projectName": "socialmediaapp",
+  "projectName": "socialmediaappaws",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
@@ -11,7 +8,10 @@
       "SourceDir": "src",
       "DistributionDir": "build",
       "BuildCommand": "npm run build",
-      "StartCommand": "npm start"
+      "StartCommand": "npm run start"
     }
-  }
+  },
+  "providers": [
+    "awscloudformation"
+  ]
 }

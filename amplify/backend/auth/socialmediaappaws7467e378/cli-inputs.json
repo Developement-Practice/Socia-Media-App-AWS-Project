@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "socialmediaappd56311c6_identitypool_d56311c6",
+    "identityPoolName": "socialmediaappaws7467e378_identitypool_7467e378",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "sociald56311c6",
-    "userPoolName": "socialmediaappd56311c6_userpool_d56311c6",
+    "resourceNameTruncated": "social7467e378",
+    "userPoolName": "socialmediaappaws7467e378_userpool_7467e378",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "sociald56311c6_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "social7467e378_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "d56311c6",
-    "resourceName": "socialmediaappd56311c6",
+    "sharedId": "7467e378",
+    "resourceName": "socialmediaappaws7467e378",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
     "triggers": {},

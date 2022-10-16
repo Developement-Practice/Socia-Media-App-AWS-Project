@@ -10,20 +10,22 @@ export const createPost = /* GraphQL */ `
     createPost(input: $input, condition: $condition) {
       id
       title
+      content
+      username
+      coverImage
       comments {
         items {
           id
+          message
           postID
-          content
           createdAt
           updatedAt
-          owner
+          createdBy
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -35,20 +37,22 @@ export const updatePost = /* GraphQL */ `
     updatePost(input: $input, condition: $condition) {
       id
       title
+      content
+      username
+      coverImage
       comments {
         items {
           id
+          message
           postID
-          content
           createdAt
           updatedAt
-          owner
+          createdBy
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -60,20 +64,22 @@ export const deletePost = /* GraphQL */ `
     deletePost(input: $input, condition: $condition) {
       id
       title
+      content
+      username
+      coverImage
       comments {
         items {
           id
+          message
           postID
-          content
           createdAt
           updatedAt
-          owner
+          createdBy
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -84,21 +90,23 @@ export const createComment = /* GraphQL */ `
   ) {
     createComment(input: $input, condition: $condition) {
       id
-      postID
+      message
       post {
         id
         title
+        content
+        username
+        coverImage
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        owner
       }
-      content
+      postID
       createdAt
       updatedAt
-      owner
+      createdBy
     }
   }
 `;
@@ -109,21 +117,23 @@ export const updateComment = /* GraphQL */ `
   ) {
     updateComment(input: $input, condition: $condition) {
       id
-      postID
+      message
       post {
         id
         title
+        content
+        username
+        coverImage
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        owner
       }
-      content
+      postID
       createdAt
       updatedAt
-      owner
+      createdBy
     }
   }
 `;
@@ -134,21 +144,23 @@ export const deleteComment = /* GraphQL */ `
   ) {
     deleteComment(input: $input, condition: $condition) {
       id
-      postID
+      message
       post {
         id
         title
+        content
+        username
+        coverImage
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        owner
       }
-      content
+      postID
       createdAt
       updatedAt
-      owner
+      createdBy
     }
   }
 `;

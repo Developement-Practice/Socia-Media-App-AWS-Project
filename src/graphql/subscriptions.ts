@@ -3,134 +3,146 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreatePost = /* GraphQL */ `
-  subscription OnCreatePost {
-    onCreatePost {
+  subscription OnCreatePost($username: String) {
+    onCreatePost(username: $username) {
       id
       title
+      content
+      username
+      coverImage
       comments {
         items {
           id
+          message
           postID
-          content
           createdAt
           updatedAt
-          owner
+          createdBy
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdatePost = /* GraphQL */ `
-  subscription OnUpdatePost {
-    onUpdatePost {
+  subscription OnUpdatePost($username: String) {
+    onUpdatePost(username: $username) {
       id
       title
+      content
+      username
+      coverImage
       comments {
         items {
           id
+          message
           postID
-          content
           createdAt
           updatedAt
-          owner
+          createdBy
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onDeletePost = /* GraphQL */ `
-  subscription OnDeletePost {
-    onDeletePost {
+  subscription OnDeletePost($username: String) {
+    onDeletePost(username: $username) {
       id
       title
+      content
+      username
+      coverImage
       comments {
         items {
           id
+          message
           postID
-          content
           createdAt
           updatedAt
-          owner
+          createdBy
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onCreateComment = /* GraphQL */ `
-  subscription OnCreateComment {
-    onCreateComment {
+  subscription OnCreateComment($createdBy: String) {
+    onCreateComment(createdBy: $createdBy) {
       id
-      postID
+      message
       post {
         id
         title
+        content
+        username
+        coverImage
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        owner
       }
-      content
+      postID
       createdAt
       updatedAt
-      owner
+      createdBy
     }
   }
 `;
 export const onUpdateComment = /* GraphQL */ `
-  subscription OnUpdateComment {
-    onUpdateComment {
+  subscription OnUpdateComment($createdBy: String) {
+    onUpdateComment(createdBy: $createdBy) {
       id
-      postID
+      message
       post {
         id
         title
+        content
+        username
+        coverImage
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        owner
       }
-      content
+      postID
       createdAt
       updatedAt
-      owner
+      createdBy
     }
   }
 `;
 export const onDeleteComment = /* GraphQL */ `
-  subscription OnDeleteComment {
-    onDeleteComment {
+  subscription OnDeleteComment($createdBy: String) {
+    onDeleteComment(createdBy: $createdBy) {
       id
-      postID
+      message
       post {
         id
         title
+        content
+        username
+        coverImage
         comments {
           nextToken
         }
         createdAt
         updatedAt
-        owner
       }
-      content
+      postID
       createdAt
       updatedAt
-      owner
+      createdBy
     }
   }
 `;

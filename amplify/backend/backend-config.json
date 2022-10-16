@@ -1,6 +1,6 @@
 {
   "auth": {
-    "socialmediaappd56311c6": {
+    "socialmediaappaws7467e378": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -26,13 +26,13 @@
     }
   },
   "api": {
-    "socialmediaapp": {
+    "socialmediaappaws": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "auth",
-          "resourceName": "socialmediaappd56311c6",
+          "resourceName": "socialmediaappaws7467e378",
           "attributes": [
             "UserPoolId"
           ]
@@ -44,15 +44,15 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 365,
-              "apiKeyExpirationDate": "2023-10-09T08:08:13.495Z",
-              "description": "apikey"
+              "apiKeyExpirationDate": "2023-10-16T10:27:58.232Z",
+              "description": "kaustav aws api key"
             }
           },
           "additionalAuthenticationProviders": [
             {
               "authenticationType": "AMAZON_COGNITO_USER_POOLS",
               "userPoolConfig": {
-                "userPoolId": "authsocialmediaappd56311c6"
+                "userPoolId": "authsocialmediaappaws7467e378"
               }
             }
           ]
